@@ -2,50 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reset.css">
 </head>
 <body>
-
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <section class="cartao">
+    <div class="cartao__frente">
+      <p class="cartao__numero" id="cartao__numero">0000 0000 0000 0000</p>
+      <div class="cartao__frente_dados">
+        <p class="cartao__nome" id="cartao__nome" >Jane Appleseed</p>
+        <div class="validade">
+          <p class="cartao__validade_mes" id="cartao__mes">00</p>
+          <p >/</p>
+          <p class="cartao__validade_ano" id="cartao__ano">00</p>
+        </div>
+      </div>      
+    </div>
+    <div class="cartap__verso">
+      <p class="cvc"  id="cartao__cvc" >000</p>
+    </div>
+  </section>
+  <section class="formulario">
+    <form id="formulario__cartao" class="formulario__cartao">
+      <div class="formulario__cartaoDados">
+        <label for="formulario__cartao_nome">Cardholder Name</label>
+        <input type="text"  onkeyup="tempo_real_nome()" name="formulario__cartao_nome" id="formulario__cartao_nome" class="formulario__cartao_campo">
+        <small>msn</small>
+      </div>
+      <div class="formulario__cartaoDados">
+        <label for="formulario__cartao_nome">Card Number</label>
+        <input type="number" onkeyup="tempo_real_numero()" name="formulario__cartao_numero" id="formulario__cartao_numero" class="formulario__cartao_campo">
+        <small>msn</small>
+      </div>
+      <div class="formulario__cartaoDados">
+        <div class="formulario__cartaoDados">
+          <label for="formulario__cartao_nome" style="grid-column: span 2;"> Exp.Date(MM/YY)</label>
+            <div class="formulario__cartaoDados">
+              <input type="number"  onkeyup="tempo_real_mes()" placeholder="MM" name="formulario__cartao_mes" id="formulario__cartao_mes" class="formulario__cartao_campo" style="width:50px;">
+              <small>msn</small>
+              <input type="number"  onkeyup="tempo_real_ano()" placeholder="YYYY" name="formulario__cartao_ano" id="formulario__cartao_ano" class="formulario__cartao_campo" style="width:50px; height:fit-content;">
+              <small>msn</small>
+            </div>
+        </div>
+        <div class="formulario__cartaoDados">
+          <label for="formulario__cartao_nome">CVC</label>
+          <input type="number"  onkeyup="tempo_real_cvc()" placeholder="e.g.123" name="formulario__cartao_mes" id="formulario__cartao_cvc" class="formulario__cartao_campo" style="width:70px;">
+          <small>msn</small>
+        </div>    
+      </div>
+      <div class="formulario__botao">
+        
+        <input type="submit" value="Confirm" class="formulario__botao">
+      </div>
+    </form>
+  </section>
+  <script src="script.js"></script>
 </body>
 </html>

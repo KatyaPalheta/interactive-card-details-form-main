@@ -1,0 +1,76 @@
+body{
+    font-size: 20px;
+}
+.cartao{
+    display: grid;
+    width: 500px;
+    height: 200px;
+    background-color: gray;
+    margin: auto;
+    margin-top: 50px;
+    align-content: space-evenly;
+    justify-items: center;
+}
+.cartao__frente{
+    background-color: plum;
+    display: grid;
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    align-content: space-evenly;
+}
+.cartao__frente_dados{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.validade_seguranca{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: end;
+    justify-content: space-around;
+}
+label{
+    display: block;
+}
+.formulario_validade{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.formulario__cartao-validade{
+    display: flex;
+    flex-direction: initial;
+}
+.validade{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.cartap__verso{
+    background-color: pink;
+    display: grid;
+    width: 400px;
+    height: 50px;
+    text-align: center;
+    align-content: space-evenly;
+}
+.formulario{
+    display: grid;
+    justify-items: center;
+    height: 200px;
+    align-content: space-evenly;
+}
+.formulario__cartao{
+    display: grid;
+    justify-items: center;
+    height: 200px;
+    align-content: space-evenly;
+}
+.formulario__erro{
+    border-color: hsl(0, 100%, 74%);
+    background-position-x: 95%;
+    margin-bottom: 3px;
+}
+.mostrar_erro{
+    color: hsl(0, 100%, 74%);
+}
