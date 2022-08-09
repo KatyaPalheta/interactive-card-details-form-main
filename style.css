@@ -1,21 +1,32 @@
 body{
     font-size: 20px;
 }
+.main{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 100vh;
+}
 .cartao{
     display: grid;
-    width: 500px;
-    height: 200px;
     background-color: gray;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
     margin: auto;
-    margin-top: 50px;
     align-content: space-evenly;
     justify-items: center;
+    background-image: url('/images/bg-main-desktop.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .cartao__frente{
     background-color: plum;
+    background-image: url('/images/bg-card-front.png');
+    background-size: cover;
     display: grid;
-    width: 400px;
-    height: 100px;
+    color: #ffffff;
+    width: 447px;
+    height: 245px;
+    border-radius: 10px;
     text-align: center;
     align-content: space-evenly;
 }
@@ -26,20 +37,24 @@ body{
 }
 .validade_seguranca{
     display: grid;
-    grid-template-columns: 70% 30%;
     align-items: end;
     justify-content: space-around;
 }
 label{
     display: block;
 }
+small{
+    color: #ffffff;
+}
+input{
+    display: block;
+}
 .formulario_validade{
     display: grid;
-    grid-template-columns: 70% 30%;
 }
 .formulario__cartao-validade{
     display: flex;
-    flex-direction: initial;
+    flex-direction: row;
 }
 .validade{
     display: flex;
@@ -47,10 +62,12 @@ label{
     justify-content: space-around;
 }
 .cartap__verso{
+    color: #ffffff;
     background-color: pink;
     display: grid;
-    width: 400px;
-    height: 50px;
+    width: 447px;
+    height: 245px;
+    border-radius: 10px;
     text-align: center;
     align-content: space-evenly;
 }
@@ -58,7 +75,12 @@ label{
     display: grid;
     justify-items: center;
     height: 200px;
-    align-content: space-evenly;
+    align-content: center;
+    margin: auto;
+}
+.formulario__cartao_validacao_in{
+    display: flex;
+    flex-direction: row;
 }
 .formulario__cartao{
     display: grid;
@@ -74,3 +96,7 @@ label{
 .mostrar_erro{
     color: hsl(0, 100%, 74%);
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;}
