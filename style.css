@@ -112,7 +112,7 @@ input::placeholder{
     margin: auto;
     position: absolute;
     left: 60%;
-    top: 300px;
+    top: 200px;
 }
 .form__confirm{
     width: -webkit-fill-available;
