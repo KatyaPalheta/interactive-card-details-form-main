@@ -1,13 +1,18 @@
 body{
     font-size: 20px;
+    font-family: 'Space Grotesk', sans-serif;
 }
 .main{
     display: grid;
     grid-template-columns: 40% 60%;
     height: 100vh;
 }
+.logo_cartao{
+    margin-left: 30px;
+}
 .cartao{
     display: grid;
+    position: relative;
     background-color: gray;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
@@ -24,11 +29,30 @@ body{
     background-size: cover;
     display: grid;
     color: #ffffff;
+    position: absolute;
+    top:180px;
     width: 447px;
     height: 245px;
     border-radius: 10px;
     text-align: center;
     align-content: space-evenly;
+    right: -100px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.cartap__verso {
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: pink;
+    background-image: url('/images/bg-card-back.png');
+    display: grid;
+    width: 447px;
+    height: 245px;
+    border-radius: 10px;
+    text-align: center;
+    align-content: space-evenly;
+    position: absolute;
+    top: 480px;
+    right: -200px;
 }
 .cartao__frente_dados{
     display: flex;
@@ -61,18 +85,10 @@ input{
     flex-direction: row;
     justify-content: space-around;
 }
-.cartap__verso{
-    color: #ffffff;
-    background-color: pink;
-    display: grid;
-    width: 447px;
-    height: 245px;
-    border-radius: 10px;
-    text-align: center;
-    align-content: space-evenly;
-}
+
 .formulario{
     display: grid;
+    font-family: 'Space Grotesk', sans-serif;
     justify-items: center;
     height: 200px;
     align-content: center;
