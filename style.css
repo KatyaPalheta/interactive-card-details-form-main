@@ -146,14 +146,14 @@ input::-webkit-inner-spin-button {
     margin: 0;}
 
 .confirmacao_continue{
-    visibility:hidden;
+    display: none;
 }
 .form__confirm{
-    visibility: visible;
+    display: block;
 }
 .formulario_invisivel{
-    visibility: hidden;
+    display: none;
 }
 .confirmacao_visivel{
-    visibility: visible;
+    display: block;
 }
