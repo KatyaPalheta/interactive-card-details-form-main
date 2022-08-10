@@ -77,7 +77,8 @@
         </div>
       </section>
       <section class="formulario">
-        <form
+        <div class="form__confirm"  id="formulario">
+          <form
           id="formulario__cartao"
           class="formulario__cartao"
         >
@@ -89,8 +90,9 @@
               name="formulario__cartao_nome"
               id="formulario__cartao_nome"
               class="formulario__cartao_campo"
+              placeholder="e.g. Jane Appleseed"
             >
-            <small>msn</small>
+            <h3>msn</h3>
           </div>
           <div class="formulario__cartaoDados">
             <label for="formulario__cartao_nome">Card Number</label>
@@ -102,17 +104,19 @@
               name="formulario__cartao_numero"
               id="formulario__cartao_numero"
               class="formulario__cartao_campo"
+              placeholder="e.g. 1234 5678 9123 0000"
             >
-            <small>msn</small>
+            <h3>msn</h3>
           </div>
           <div class="formulario__cartaoDados formulario__cartao_validacao">
             <div class="formulario__cartaoDados formulario__cartao_validacao_in">
               <label
                 for="formulario__cartao_nome"
-                style="grid-column: span 2;"
+                style="grid-area:A"
               >
                 Exp.Date(MM/YY)</label>
-              <div class="formulario__cartaoDados">
+              <div class="formulario__cartaoDados"
+                style="display: flex;">
                 <input
                   type="number"
                   min="1"
@@ -122,10 +126,8 @@
                   name="formulario__cartao_mes"
                   id="formulario__cartao_mes"
                   class="formulario__cartao_campo"
-                  style="width:50px;"
+                  style="width:60px; grid-area: B; display:block;"
                 >
-                <small>msn</small>
-
                 <input
                   type="number"
                   min="2022"
@@ -135,14 +137,12 @@
                   name="formulario__cartao_ano"
                   id="formulario__cartao_ano"
                   class="formulario__cartao_campo"
-                  style="width:50px;
-                height:fit-content;"
+                  style="width:60px; grid-area:C; display:block;"
                 >
-                <small>msn</small>
               </div>
             </div>
             <div class="formulario__cartaoDados">
-              <label for="formulario__cartao_nome">CVC</label>
+              <label for="formulario__cartao_nome" style="grid-area:D" >CVC</label>
               <input
                 type="number"
                 minlength="3"
@@ -152,21 +152,35 @@
                 name="formulario__cartao_mes"
                 id="formulario__cartao_cvc"
                 class="formulario__cartao_campo"
-                style="width:70px;"
+                style="width:60px; grid-area: E;"
               >
-              <small>msn</small>
             </div>
+            <h3 class="Formulario__cartao_validacao_in" style="grid-area:F;">msn</h3>
           </div>
           <div class="formulario__botao">
             <input
               type="submit"
               value="Confirm"
-              class="formulario__botao"
+              class="botão"
+              style="background-color: hsl(278, 68%, 11%);color:#ffffff; font-size: 18px;"
             >
           </div>
         </form>
+        </div>
+        <div style="text-align:center;" id="confirmacao_continue" class="confirmacao_continue">
+          <img  style="padding:20px;" src="/images/icon-complete.svg" alt="" class="check">
+          <h2 style="font-size:32px; padding:20px;" >Thank you!</h2>
+          <p style="text-transform:none; padding:20px;">We've added your card details</p>
+          <div class="botao_continue">
+            <input
+              type="button"
+              value="Continue"
+              class="botão"
+              style="background-color: hsl(278, 68%, 11%);color:#ffffff; font-size: 18px;"
+            >
+          </div>
+        </div>
       </section>
-
     </main>
 
     <script src="script.js"></script>

@@ -1,6 +1,7 @@
 body{
     font-size: 20px;
     font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
 }
 .main{
     display: grid;
@@ -9,6 +10,10 @@ body{
 }
 .logo_cartao{
     margin-left: 30px;
+}
+.formulario{
+    height: 1vh;
+
 }
 .cartao{
     display: grid;
@@ -64,15 +69,27 @@ body{
     align-items: end;
     justify-content: space-around;
 }
-label{
+.formulario label{
     display: block;
+    padding: 10px;
 }
-small{
+h3{
     color: #ffffff;
 }
-input{
+.formulario input{
     display: block;
+    width: 350px;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
 }
+.formulario__cartao_validacao{
+    display: flex;
+}
+input::placeholder{
+    color: rgb(215, 215, 215);
+}
+
 .formulario_validade{
     display: grid;
 }
@@ -93,10 +110,16 @@ input{
     height: 200px;
     align-content: center;
     margin: auto;
+    position: absolute;
+    left: 60%;
+    top: 300px;
 }
-.formulario__cartao_validacao_in{
-    display: flex;
-    flex-direction: row;
+.form__confirm{
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    padding: auto;
+    margin-top: 500px;
+
 }
 .formulario__cartao{
     display: grid;
@@ -111,8 +134,26 @@ input{
 }
 .mostrar_erro{
     color: hsl(0, 100%, 74%);
+    margin: 10px;
 }
+.formulario__cartao_validacao_in{
+    grid-template-areas: "AAAAAADDD" "BBBCCCEEE" "FFFFFFGGG";
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;}
+
+.confirmacao_continue{
+    visibility:hidden;
+}
+.form__confirm{
+    visibility: visible;
+}
+.formulario_invisivel{
+    visibility: hidden;
+}
+.confirmacao_visivel{
+    visibility: visible;
+}

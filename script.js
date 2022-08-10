@@ -44,19 +44,22 @@ function checkInputs() {
 }
 function setErrorFor(input, message) {
     const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
+    const h3 = formControl.querySelector('h3');
     formControl.className = 'formulario__cartaoDados error';
-    small.innerText = message;
+    h3.innerText = message;
     input.classList.add("formulario__erro");
-    small.classList.add("mostrar_erro")
+    h3.classList.add("mostrar_erro")
 }
 function setSuccessFor(input) {
     const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
+    const h3 = formControl.querySelector('h3');
+    const confirm = document.getElementById('formulario');
+    const form_restart = document.getElementById('confirmacao_continue');
     formControl.className = 'formulario__cartaoDados success';
     input.classList.remove("formulario__erro");
-    small.classList.remove("mostrar_erro");
-    window.location.href = "https://www.google.com/";
+    h3.classList.remove("mostrar_erro");
+    confirm.classList.add("formulario_invisivel");
+    form_restart.classList.add("confirmacao_visivel");
 }
 
 //nome da função foi dado inline no html no input que esta sendo digitado pelo usuario
