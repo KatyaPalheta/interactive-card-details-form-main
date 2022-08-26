@@ -1,188 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Frontend Mentor | Interactive card details form</title>
+		<link rel="stylesheet" href="/assets/styles/style.css" />
+		<link rel="stylesheet" href="/assets/styles/reset.css" />
+	</head>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta
-      http-equiv="X-UA-Compatible"
-      content="IE=edge"
-    >
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    >
-    <title>Frontend Mentor | Interactive card details form</title>
-    <link
-      rel="stylesheet"
-      href="style.css"
-    >
-    <link
-      rel="stylesheet"
-      href="reset.css"
-    >
-  </head>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+		rel="stylesheet"
+	/>
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
-    rel="stylesheet"
-  >
+	<body>
+		<main class="main">
+			<section class="cartao">
+				<div class="cartao__frente">
+					<img
+						src="/assets/images/card-logo.svg"
+						alt="Logo de cartão ficticio"
+						class="logo_cartao"
+					/>
+					<p class="cartao__numero" id="cartao__numero" style="font-size: 30px">
+						0000 0000 0000 0000
+					</p>
+					<div class="cartao__frente_dados">
+						<p class="cartao__nome" id="cartao__nome">Jane Appleseed</p>
+						<div class="validade">
+							<p class="cartao__validade_mes" id="cartao__mes">00</p>
+							<p>/</p>
+							<p class="cartao__validade_ano" id="cartao__ano">00</p>
+						</div>
+					</div>
+				</div>
+				<div class="cartap__verso">
+					<p class="cvc" id="cartao__cvc" style="width: 395px; text-align: right">
+						000
+					</p>
+				</div>
+			</section>
+			<section class="formulario">
+				<div class="form__confirm" id="formulario">
+					<form id="formulario__cartao" class="formulario__cartao">
+						<div class="formulario__cartaoDados">
+							<label for="formulario__cartao_nome">Cardholder Name</label>
+							<input
+								type="text"
+								onkeyup="tempo_real_nome()"
+								name="formulario__cartao_nome"
+								id="formulario__cartao_nome"
+								class="formulario__cartao_campo"
+								placeholder="e.g. Jane Appleseed"
+							/>
+							<h3>msn</h3>
+						</div>
+						<div class="formulario__cartaoDados">
+							<label for="formulario__cartao_nome">Card Number</label>
+							<input
+								type="number"
+								onkeyup="tempo_real_numero()"
+								minlength="16"
+								maxlength="16"
+								name="formulario__cartao_numero"
+								id="formulario__cartao_numero"
+								class="formulario__cartao_campo"
+								placeholder="e.g. 1234 5678 9123 0000"
+							/>
+							<h3>msn</h3>
+						</div>
+						<div class="formulario__cartaoDados formulario__cartao_validacao">
+							<div class="formulario__cartaoDados formulario__cartao_validacao_in">
+								<label for="formulario__cartao_nome" style="grid-area: A">
+									Exp.Date(MM/YY)</label
+								>
+								<div class="formulario__cartaoDados" style="display: flex">
+									<input
+										type="number"
+										min="1"
+										max="12"
+										onkeyup="tempo_real_mes()"
+										placeholder="MM"
+										name="formulario__cartao_mes"
+										id="formulario__cartao_mes"
+										class="formulario__cartao_campo"
+										style="width: 60px; grid-area: B; display: block"
+									/>
+									<input
+										type="number"
+										min="2022"
+										onkeyup="tempo_real_ano()"
+										onkeypress="formatacao()"
+										placeholder="YYYY"
+										name="formulario__cartao_ano"
+										id="formulario__cartao_ano"
+										class="formulario__cartao_campo"
+										style="width: 60px; grid-area: C; display: block"
+									/>
+								</div>
+							</div>
+							<div class="formulario__cartaoDados">
+								<label for="formulario__cartao_nome" style="grid-area: D">CVC</label>
+								<input
+									type="number"
+									minlength="3"
+									maxlength="3"
+									onkeyup="tempo_real_cvc()"
+									placeholder="e.g.123"
+									name="formulario__cartao_mes"
+									id="formulario__cartao_cvc"
+									class="formulario__cartao_campo"
+									style="width: 60px; grid-area: E"
+								/>
+							</div>
+							<h3 class="Formulario__cartao_validacao_in" style="grid-area: F">msn</h3>
+						</div>
+						<div class="formulario__botao">
+							<input
+								type="submit"
+								value="Confirm"
+								class="botão"
+								style="
+									background-color: hsl(278, 68%, 11%);
+									color: #ffffff;
+									font-size: 18px;
+								"
+							/>
+						</div>
+					</form>
+				</div>
+				<div
+					style="text-align: center; position: absolute; left: 100px; top: 50px"
+					id="confirmacao_continue"
+					class="confirmacao_continue"
+				>
+					<img
+						style="padding: 20px"
+						src="/assets/images/icon-complete.svg"
+						alt=""
+						class="check"
+					/>
+					<h2 style="font-size: 32px; padding: 20px">Thank you!</h2>
+					<p style="text-transform: none; padding: 20px">
+						We've added your card details
+					</p>
+					<div class="botao_continue">
+						<input
+							type="button"
+							value="Continue"
+							class="botão"
+							style="
+								background-color: hsl(278, 68%, 11%);
+								color: #ffffff;
+								font-size: 18px;
+							"
+						/>
+					</div>
+				</div>
+			</section>
+		</main>
 
-  <body>
-    <main class="main">
-      <section class="cartao">
-        <div class="cartao__frente">
-          <img
-            src="/images/card-logo.svg"
-            alt="Logo de cartão ficticio"
-            class="logo_cartao"
-          >
-          <p
-            class="cartao__numero"
-            id="cartao__numero"
-            style="font-size: 30px;"
-          >0000 0000 0000 0000</p>
-          <div class="cartao__frente_dados">
-            <p
-              class="cartao__nome"
-              id="cartao__nome"
-            >Jane Appleseed</p>
-            <div class="validade">
-              <p
-                class="cartao__validade_mes"
-                id="cartao__mes"
-              >00</p>
-              <p>/</p>
-              <p
-                class="cartao__validade_ano"
-                id="cartao__ano"
-              >00</p>
-            </div>
-          </div>
-        </div>
-        <div class="cartap__verso">
-          <p
-            class="cvc"
-            id="cartao__cvc"
-            style="width: 395px; text-align: right;"
-          >000</p>
-        </div>
-      </section>
-      <section class="formulario">
-        <div class="form__confirm"  id="formulario">
-          <form
-          id="formulario__cartao"
-          class="formulario__cartao"
-        >
-          <div class="formulario__cartaoDados">
-            <label for="formulario__cartao_nome">Cardholder Name</label>
-            <input
-              type="text"
-              onkeyup="tempo_real_nome()"
-              name="formulario__cartao_nome"
-              id="formulario__cartao_nome"
-              class="formulario__cartao_campo"
-              placeholder="e.g. Jane Appleseed"
-            >
-            <h3>msn</h3>
-          </div>
-          <div class="formulario__cartaoDados">
-            <label for="formulario__cartao_nome">Card Number</label>
-            <input
-              type="number"
-              onkeyup="tempo_real_numero()"
-              minlength="16"
-              maxlength="16"
-              name="formulario__cartao_numero"
-              id="formulario__cartao_numero"
-              class="formulario__cartao_campo"
-              placeholder="e.g. 1234 5678 9123 0000"
-            >
-            <h3>msn</h3>
-          </div>
-          <div class="formulario__cartaoDados formulario__cartao_validacao">
-            <div class="formulario__cartaoDados formulario__cartao_validacao_in">
-              <label
-                for="formulario__cartao_nome"
-                style="grid-area:A"
-              >
-                Exp.Date(MM/YY)</label>
-              <div class="formulario__cartaoDados"
-                style="display: flex;">
-                <input
-                  type="number"
-                  min="1"
-                  max="12"
-                  onkeyup="tempo_real_mes()"
-                  placeholder="MM"
-                  name="formulario__cartao_mes"
-                  id="formulario__cartao_mes"
-                  class="formulario__cartao_campo"
-                  style="width:60px; grid-area: B; display:block;"
-                >
-                <input
-                  type="number"
-                  min="2022"
-                  onkeyup="tempo_real_ano()"
-                  onkeypress="formatacao()"
-                  placeholder="YYYY"
-                  name="formulario__cartao_ano"
-                  id="formulario__cartao_ano"
-                  class="formulario__cartao_campo"
-                  style="width:60px; grid-area:C; display:block;"
-                >
-              </div>
-            </div>
-            <div class="formulario__cartaoDados">
-              <label for="formulario__cartao_nome" style="grid-area:D" >CVC</label>
-              <input
-                type="number"
-                minlength="3"
-                maxlength="3"
-                onkeyup="tempo_real_cvc()"
-                placeholder="e.g.123"
-                name="formulario__cartao_mes"
-                id="formulario__cartao_cvc"
-                class="formulario__cartao_campo"
-                style="width:60px; grid-area: E;"
-              >
-            </div>
-            <h3 class="Formulario__cartao_validacao_in" style="grid-area:F;">msn</h3>
-          </div>
-          <div class="formulario__botao">
-            <input
-              type="submit"
-              value="Confirm"
-              class="botão"
-              style="background-color: hsl(278, 68%, 11%);color:#ffffff; font-size: 18px;"
-            >
-          </div>
-        </form>
-        </div>
-        <div style="text-align:center; position: absolute; left: 100px; top:50px;" id="confirmacao_continue" class="confirmacao_continue">
-          <img  style="padding:20px;" src="/images/icon-complete.svg" alt="" class="check">
-          <h2 style="font-size:32px; padding:20px;" >Thank you!</h2>
-          <p style="text-transform:none; padding:20px;">We've added your card details</p>
-          <div class="botao_continue">
-            <input
-              type="button"
-              value="Continue"
-              class="botão"
-              style="background-color: hsl(278, 68%, 11%);color:#ffffff; font-size: 18px;"
-            >
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <script src="script.js"></script>
-  </body>
+		<script src="/assets/scripts/script.js"></script>
+	</body>
 </html>

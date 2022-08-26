@@ -24,13 +24,13 @@ body{
     margin: auto;
     align-content: space-evenly;
     justify-items: center;
-    background-image: url('/images/bg-main-desktop.png');
+    background-image: url('/assets/images/bg-main-desktop.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 .cartao__frente{
     background-color: plum;
-    background-image: url('/images/bg-card-front.png');
+    background-image: url('/assets/images/bg-card-front.png');
     background-size: cover;
     display: grid;
     color: #ffffff;
@@ -48,7 +48,7 @@ body{
     color: #ffffff;
     font-family: 'Space Grotesk', sans-serif;
     background-color: pink;
-    background-image: url('/images/bg-card-back.png');
+    background-image: url('/assets/images/bg-card-back.png');
     display: grid;
     width: 447px;
     height: 245px;
